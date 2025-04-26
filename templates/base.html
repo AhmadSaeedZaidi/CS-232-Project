@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/giki-logo.png') }}" alt="GIKI Logo" class="company-logo">
+                <a class="logo" href="{{ url_for('index') }}">Mess System</a>
+            </div>
+            <input type="checkbox" id="menu-toggle-checkbox" class="menu-toggle-checkbox">
+            <label for="menu-toggle-checkbox" class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('menu_bp.view_menus') }}">Menu</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#">Billing</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+   
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Autism               Web Dev Department. All rights reserved.</p>
+            <p>made by 2023073, 2023495, Nigga T</p>
+        </div>
+    </footer>
+
+</body>
+</html>

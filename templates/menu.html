@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="menu-section">
+    <div class="container">
+        <h1>Current Mess Menu</h1>
+        <div class="menu-table-container">
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Breakfast</th>
+                        <th>Lunch</th>
+                        <th>Dinner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for day, breakfast, lunch, dinner in menu_data %}
+                    <tr>
+                        <td class="day-cell">{{ day }}</td>
+                        <td>{{ breakfast }}</td>
+                        <td>{{ lunch }}</td>
+                        <td>{{ dinner }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="suggestions-box">
+            <h3>Have ideas to improve the menu?</h3>
+            <p>We value your feedback and are always looking to improve our meal options.</p>
+            <a href="{{ url_for('menu_bp.suggestions') }}" class="btn">Submit Suggestions</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
